@@ -1,0 +1,20 @@
+version: '3'
+services:
+
+    rms-ddd-web:
+        container_name: rms-ddd-web
+        image: dptsi/laravel-web-dev:8.0
+        volumes:
+            - ./src:/var/www/html
+        environment:
+            - VIRTUAL_HOST=${VIRTUAL_HOST}
+            - VIRTUAL_PORT=${VIRTUAL_PORT}
+            - SELF_SIGNED_HOST=${SELF_SIGNED_HOST}
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        networks:
+            - nginx-proxy-network
+
+networks:
+    nginx-proxy-network:
+        external: true
