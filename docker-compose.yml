@@ -3,7 +3,7 @@ services:
 
     rms-ddd-web:
         container_name: rms-ddd-web
-        image: dptsi/laravel-web-dev:8.0
+        image: dptsi/laravel-web-dev:8.1
         volumes:
             - ./src:/var/www/html
         environment:
